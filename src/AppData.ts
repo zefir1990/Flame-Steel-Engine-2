@@ -1,4 +1,4 @@
-export class GameData {
+export class AppData {
     constructor() {
         this._order = "";
         this._name = "";

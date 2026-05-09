@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
-import { Utils } from "./utils.js";
+import { Utils } from "./Utils.js";
 import * as SkeletonUtils from 'three/examples/jsm/utils/SkeletonUtils.js';
 import { SceneObject } from "./sceneObject.js";
 import { Names } from "./names.js";
@@ -12,7 +12,7 @@ import { SceneObjectCommandTeleport } from "./sceneObjectCommandTeleport.js";
 import { SceneObjectCommandIdle } from "./sceneObjectCommandIdle.js";
 import { SceneObjectCommandTranslate } from "./sceneObjectCommandTranslate.js";
 import { ObjectsPickerController } from "./objectsPickerController.js";
-import { AnimationContainer } from "./animationContainer.js";
+import { AnimationContainer } from "./AnimationContainer.js";
 import { GameVector3 } from "./gameVector3.js";
 import { SceneController } from "./sceneController.js";
 
@@ -247,9 +247,6 @@ export class ThreeSceneController extends SceneController {
         parent.add(child);
     }
 
-    saveGameSettings() {
-        this.gameSettings.save();
-    }
     setToneMappingExposure(exposure) {
         this.renderer.toneMappingExposure = exposure;
     }

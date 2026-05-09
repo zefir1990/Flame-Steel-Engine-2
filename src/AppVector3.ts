@@ -1,9 +1,9 @@
-export class GameVector3 {
+export class AppVector3 {
     static zero() {
-        return new GameVector3(0, 0, 0);
+        return new AppVector3(0, 0, 0);
     }
     static zeroBut({ x = 0, y = 0, z = 0 }) {
-        return new GameVector3(x, y, z);
+        return new AppVector3(x, y, z);
     }
     constructor(x, y, z) {
         this.x = x;
@@ -50,9 +50,9 @@ export class GameVector3 {
         const length = Math.sqrt(this.x *
             this.x +
             this.y *
-                this.y +
+            this.y +
             this.z *
-                this.z);
+            this.z);
         if (length === 0) {
             return new GameVector3(0, 0, 0);
         }

@@ -1,6 +1,6 @@
 import { Utils } from "./utils.js";
 import { debugPrint } from "./runtime.js";
-export class GameSettings {
+export class AppSettings {
     static default() {
         return new GameSettings(4, 0, 0.5, 0.5);
     }
@@ -32,4 +32,3 @@ export class GameSettings {
         return gameSettings;
     }
 }
-GameSettings.databaseKey = "GameSettings";

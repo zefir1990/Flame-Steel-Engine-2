@@ -1,4 +1,4 @@
-import { Utils } from "./utils.js";
+import { Utils } from "./Utils.js";
 class Texture {
     constructor(name) {
         this.name = name;

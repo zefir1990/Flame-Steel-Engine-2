@@ -1,0 +1,37 @@
+export interface SceneController {
+    windowWidth(): number;
+    windowHeight(): number;
+    serializedSceneObjects(): string;
+    serializeSceneObject(name: string): string;
+    sceneObjectPosition(name: string): AppVector3;
+    sceneObjectQuaternionForObject(name: string): AppQuaternion;
+    sceneObject(name: string, x: number, y: number, z: number): SceneObject;
+    isObjectWithNameOlderThan(name: string, date: Date): boolean;
+    objectCollidesWithObject(alisaName: string, bobName: string): boolean;
+    setFog(color: AppColor, near: number, far: number): void;
+    setBackgroundColor(red: number, green: number, blue: number): void;
+    setToneMappingExposure(exposure: number): void;
+    setLightIntensity(objectName: string, intensity: number): void;
+    setObjectOpacity(name: string, opacity: number): void;
+    addLight(): void;
+    addPointLight(objectName: string, position: AppVector3, color: AppColor, intensity: number, distance: number, decay: number): void;
+    addEnvironmentLight(color: AppColor, intensity: number): void;
+    scale(): number;
+    addModelAt(name: string, modelName: string, x: number, y: number, z: number, rX: number, rY: number, rZ: number, isMovable: boolean, boxSize: number, successCallback: () => void, color: AppColor, transparent: boolean, opacity: number): void;
+    addBoxAt(name: string, x: number, y: number, z: number, textureName: string, size: number, color: AppColor, transparent: boolean, opacity: number): void;
+    addPlaneAt(name: string, x: number, y: number, z: number, width: number, height: number, textureName: string, color: AppColor, resetDepthBuffer: boolean, transparent: boolean, opacity: number, receiveShadow: boolean): void;
+    addInstancedModel(instanceName: string, modelName: string, positions: AppVector3[]): void;
+    preloadModels(modelNames: string[]): void;
+    stickObjectToObject(childName: string, parentName: string): void;
+    removeObjectWithName(name: string): void;
+    removeSceneObjectWithName(name: string): void;
+    removeAllSceneObjectsExceptCamera(): void;
+    translateObject(name: string, x: number, y: number, z: number): void;
+    moveObjectTo(name: string, x: number, y: number, z: number): void;
+    rotateObjectTo(name: string, x: number, y: number, z: number): void;
+    switchSkyboxIfNeeded(args: SceneSkyboxSwitchArguments): void;
+    objectsPickerControllerDidPickObject(picker: ObjectsPickerController, object: SceneObject): void;
+    objectPlayAnimation(objectName: string, animationName: string): void;
+    objectStopAnimation(objectName: string, animationName: string): void;
+    step(): void;
+}
